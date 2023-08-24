@@ -1,0 +1,52 @@
+const axios = require('axios');
+
+const options = {
+  method: 'POST',
+  url: 'https://hotels4.p.rapidapi.com/properties/v2/get-offers',
+  headers: {
+    'content-type': 'application/json',
+    'X-RapidAPI-Key': '4a228c19e7msh9d7d0bb8a5843b2p181778jsn57007e9cd50b',
+    'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+  },
+  data: {
+    currency: 'USD',
+    eapid: 1,
+    locale: 'en_US',
+    siteId: 300000001,
+    propertyId: '9209612',
+    checkInDate: {
+      day: 6,
+      month: 10,
+      year: 2022
+    },
+    checkOutDate: {
+      day: 9,
+      month: 10,
+      year: 2022
+    },
+    destination: {
+      coordinates: {
+        latitude: 12.24959,
+        longitude: 109.190704
+      },
+      regionId: '6054439'
+    },
+    rooms: [
+      {
+        adults: 2,
+        children: [{age: 5}, {age: 7}]
+      },
+      {
+        adults: 2,
+        children: []
+      }
+    ]
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Footer,Blog,WhatGPT3,Possibility, Header  } from './containers';
-import { Brand,CTA,Navbar,Feature } from './components';
+import { Footer, Header, Hotel  } from './containers';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => {
   return (
     <div className='App'>
       <Header />
+      <Hotel />
       <Footer />
     </div>
   )

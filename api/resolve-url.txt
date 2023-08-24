@@ -1,0 +1,23 @@
+const axios = require('axios');
+
+const options = {
+  method: 'GET',
+  url: 'https://hotels4.p.rapidapi.com/properties/v2/resolve-url',
+  params: {
+    id: 'ho546370',
+    locale: 'en_US',
+    langid: '1033',
+    siteid: '300000001'
+  },
+  headers: {
+    'X-RapidAPI-Key': '4a228c19e7msh9d7d0bb8a5843b2p181778jsn57007e9cd50b',
+    'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'
+  }
+};
+
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
+}
